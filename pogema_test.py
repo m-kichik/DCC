@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from functools import partial
 import os
 import pickle
@@ -56,8 +57,8 @@ def prepare_tests(test_set:list, on_target: str = "nothing", collision_system: s
 def run_test_set(
     model_file: str,
     test_set_file: str,
-    on_target: str = "finish",
-    collision_system: str = "priority",
+    on_target: str = "nothing",
+    collision_system: str = "soft",
 ):
     network = Network()
     network.eval()
@@ -84,8 +85,19 @@ def run_test_set(
     print("communication times: {}".format(sum(num_comm)/len(num_comm)))
 
 
+def parse_args():
+    parser = ArgumentParser()
+    parser.add_argument("--weights", type=str, help="path to model weights")
+    parser.add_argument("--test_set", type=str, help="path to test set")
+    parser.add_argument("--on_target", type=str, default="nothing", help="on_target in pogema")
+    parser.add_argument("--collision_system", type=str, default="soft", help="collision_system in pogema")
+
+    return parser.parse_args()
+
+
 def main():
-    run_test_set("saved_models/128000.pth", "test_set/40length_4agents_0.3density.pth")
+    args = parse_args()
+    run_test_set(args.weights, args.test_set, args.on_target, args.collision_system)
 
 
 if __name__ == "__main__":
