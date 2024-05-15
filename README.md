@@ -2,7 +2,7 @@
 Original code and trained model for paper ['Learning Selective Communication for Multi-Agent Path Finding'](https://arxiv.org/abs/2109.05413).
 
 # POGEMA
-This repository contains the implementation of the POGEMA \[[github](https://github.com/AIRI-Institute/pogema) | [paper](https://arxiv.org/abs/2206.10944)\] wrapper and corresponding functions.
+This repository contains the implementation of the POGEMA \[[github](https://github.com/AIRI-Institute/pogema) | [paper](https://arxiv.org/abs/2206.10944)\] wrapper for the DCC algorithm and corresponding functions.
 
 Find demo by following [link](https://github.com/m-kichik/DCC/blob/main/pogema_demo.ipynb).
 
