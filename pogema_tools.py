@@ -7,7 +7,7 @@ import numpy as np
 import torch
 from pogema import pogema_v0, GridConfig
 from pogema.animation import AnimationMonitor, AnimationConfig
-from tasks import crowdy_task
+from pogema_tasks import crowdy_task
 
 from model import Network
 import config
